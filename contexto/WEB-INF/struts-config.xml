@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+<!-- =================IngresoPresupuestoTrabajo================= Form Bean Definitions -->
+    <form-beans>
+    	<form-bean name="IndexForm"  type="cl.duoc.ventabook.IndexForm" />
+    	<form-bean name="ListadoMantenedoresForm"  type="cl.duoc.ventabook.form.ListadoMantenedoresForm" />
+    	<form-bean name="MantenedorClienteForm"  type="cl.duoc.ventabook.form.MantenedorClienteForm" />
+    	<form-bean name="AgregarModficarClienteForm"  type="cl.duoc.ventabook.form.AgregarModficarClienteForm" />
+    	<form-bean name="MantenedorStockForm"  type="cl.duoc.ventabook.form.MantenedorStockForm" />
+    	<form-bean name="AgregarModficarStockForm"  type="cl.duoc.ventabook.form.AgregarModficarStockForm" />
+    	<form-bean name="MantenedorVentasForm"  type="cl.duoc.ventabook.form.MantenedorVentasForm" />
+    	<form-bean name="MantenedorDespachoForm"  type="cl.duoc.ventabook.form.MantenedorDespachoForm" />
+    	<form-bean name="MantenedorBodegaForm"  type="cl.duoc.ventabook.form.MantenedorBodegaForm" />
+    	<form-bean name="AgregarModficarBodegaForm"  type="cl.duoc.ventabook.form.AgregarModficarBodegaForm" />
+    	<form-bean name="VentaForm"  type="cl.duoc.ventabook.form.VentaForm" />
+    </form-beans>
+
+<!-- =================================== Global Forward Definitions -->
+
+    <global-forwards>
+        
+        <forward name="inicio" path="/templates.jsp"/>
+    	<forward name="paginaBlanca" path="/blanca.html"/>
+    	<forward name="index" path="/index.jsp" redirect="true"/>
+    	
+       	<forward name="IndexDo" path="/Index.do" redirect="true"/>
+       	<forward name="ListadoMantenedoresDo" path="/ListadoMantenedores.do" redirect="true"/>
+       	<forward name="MantenedorClienteDo" path="/MantenedorCliente.do" redirect="true"/>
+       	<forward name="AgregarModficarClienteDo" path="/AgregarModficarCliente.do" redirect="true"/>
+       	<forward name="MantenedorStockDo" path="/MantenedorStock.do" redirect="true"/>
+       	<forward name="AgregarModficarStockDo" path="/AgregarModficarStock.do" redirect="true"/>
+       	<forward name="MantenedorVentasDo" path="/MantenedorVentas.do" redirect="true"/>
+       	<forward name="MantenedorDespachoDo" path="/MantenedorDespacho.do" redirect="true"/>
+       	<forward name="MantenedorBodegaDo" path="/MantenedorBodega.do" redirect="true"/>
+       	<forward name="AgregarModficarBodegaDo" path="/AgregarModficarBodega.do" redirect="true"/>
+       	<forward name="VentaDo" path="/Venta.do" redirect="true"/>
+    </global-forwards>
+
+
+<!-- =================================== Action Mapping Definitions -->
+    <action-mappings>	    
+	    <action path="/Index" type="cl.duoc.ventabook.action.IndexAction" name="IndexForm" scope="request" parameter="do">
+        	<forward name="Index" path="/Index.jsp"/>
+	    </action>
+	    
+	    <action path="/ListadoMantenedores" type="cl.duoc.ventabook.action.ListadoMantenedoresAction" name="ListadoMantenedoresForm" scope="request" parameter="do">
+        	<forward name="ListadoMantenedores" path="/ListadoMantenedores.jsp"/>
+	    </action>
+	    
+	    <action path="/MantenedorCliente" type="cl.duoc.ventabook.action.MantenedorClienteAction" name="MantenedorClienteForm" scope="request" parameter="do">
+        	<forward name="MantenedorCliente" path="/MantenedorCliente.jsp"/>
+	    </action>
+	    
+	    <action path="/AgregarModficarCliente" type="cl.duoc.ventabook.action.AgregarModficarClienteAction" name="AgregarModficarClienteForm" scope="request" parameter="do">
+        	<forward name="AgregarModficarCliente" path="/AgregarModficarCliente.jsp"/>
+	    </action>
+	    
+	    <action path="/MantenedorStock" type="cl.duoc.ventabook.action.MantenedorStockAction" name="MantenedorStockForm" scope="request" parameter="do">
+        	<forward name="MantenedorStock" path="/MantenedorStock.jsp"/>
+	    </action>
+	    
+	     <action path="/AgregarModficarStock" type="cl.duoc.ventabook.action.AgregarModficarStockAction" name="AgregarModficarStockForm" scope="request" parameter="do">
+        	<forward name="AgregarModficarStock" path="/AgregarModficarStock.jsp"/>
+	    </action>
+	    
+	    <action path="/MantenedorVentas" type="cl.duoc.ventabook.action.MantenedorVentasAction" name="MantenedorVentasForm" scope="request" parameter="do">
+        	<forward name="MantenedorVentas" path="/MantenedorVentas.jsp"/>
+	    </action>
+	    
+	    <action path="/MantenedorDespacho" type="cl.duoc.ventabook.action.MantenedorDespachoAction" name="MantenedorDespachoForm" scope="request" parameter="do">
+        	<forward name="MantenedorDespacho" path="/MantenedorDespacho.jsp"/>
+	    </action>
+	    
+	    <action path="/MantenedorBodega" type="cl.duoc.ventabook.action.MantenedorBodegaAction" name="MantenedorBodegaForm" scope="request" parameter="do">
+        	<forward name="MantenedorBodega" path="/MantenedorBodega.jsp"/>
+	    </action>
+	    
+	    <action path="/AgregarModficarBodega" type="cl.duoc.ventabook.action.AgregarModficarBodegaAction" name="AgregarModficarBodegaForm" scope="request" parameter="do">
+        	<forward name="AgregarModficarBodega" path="/AgregarModficarBodega.jsp"/>
+	    </action>
+	    
+	    <action path="/Venta" type="cl.duoc.ventabook.action.VentaAction" name="VentaForm" scope="request" parameter="do">
+        	<forward name="Venta" path="/Venta.jsp"/>
+	    </action>
+    </action-mappings>
+    
+    
+<!-- =================================== Message Resources Definitions -->
+	<message-resources parameter="application" />
+
+</struts-config>
+
